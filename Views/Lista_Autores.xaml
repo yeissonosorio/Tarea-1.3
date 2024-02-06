@@ -6,9 +6,11 @@
     <StackLayout>
         <SearchBar x:Name="SearchBarAutores"
            Placeholder="Buscar autor..."
-           SearchCommand="{Binding BuscarAutoresCommand}" />
+           SearchCommand="{Binding BuscarAutoresCommand}"
+           SearchButtonPressed="SearchBarAutores_SearchButtonPressed" />
+
         <StackLayout>
-            <ListView ItemsSource="{Binding PersonasList}" HasUnevenRows="True">
+            <ListView x:Name="searchResults" ItemsSource="{Binding PersonasList}" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

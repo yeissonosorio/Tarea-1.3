@@ -34,5 +34,12 @@ namespace Tarea_1._3.ViewModels
             PersonasList = new ObservableCollection<DateBase>(personas);
         }
 
+        public async Task Encontrar_Personas(string nombre)
+        {
+            await _formularioController.Init();
+            var personas = await _formularioController.Obtener_Persona(nombre);
+            PersonasList = new ObservableCollection<DateBase>(personas);
+        }
+
     }
 }

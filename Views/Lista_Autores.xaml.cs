@@ -18,5 +18,16 @@ namespace Tarea_1._3.Views
             base.OnAppearing();
             await _viewModel.CargarPersonas();
         }
+
+        private async void SearchBarAutores_SearchButtonPressed(object sender, EventArgs e)
+        {
+            SearchBar searchBar = (SearchBar)sender;
+            string nombre = searchBar.Text;
+
+            // Llama al método para encontrar personas según el nombre proporcionado
+            await _viewModel.Encontrar_Personas(nombre);
+        }
+
+
     }
 }

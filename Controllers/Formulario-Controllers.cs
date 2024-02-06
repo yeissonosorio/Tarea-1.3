@@ -44,5 +44,12 @@ namespace Tarea_1._3.Controllers
             await Init();
             return await _connection.Table<DateBase>().ToListAsync();
         }
+
+        public async Task<List<DateBase>> Obtener_Persona(string nombre)
+        {
+            await Init();
+            return await _connection.Table<DateBase>().Where(x => x.Nombre == nombre).ToListAsync();
+        }
+
     }
 }
